@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../modelo/Review.class.php';
+require_once '../model/review.class.php';
 
 if (!isset($_SESSION['usuario_id'])) { header('Location: ../layout/login.php'); exit; }
 

@@ -1,5 +1,5 @@
 <?php
-require_once 'Conexao.class.php';
+require_once 'conexao.class.php';
 
 class Review {
     private $con;

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../modelo/Usuario.class.php';
+require_once '../model/Usuario.class.php';
 
 // Logout
 if (isset($_GET['logout'])) {

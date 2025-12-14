@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../modelo/Review.class.php';
+require_once '../model/review.class.php';
 if (!isset($_SESSION['usuario_id'])) { header('Location: login.php'); exit; }
 
 $reviewModel = new Review();
@@ -19,7 +19,7 @@ $lista = $reviewModel->listar();
 <body>
     <h1>Reviews de Jogos</h1>
     <a href="cadastro.php">NOVA REVIEW</a> | 
-    <a href="../controlador/login.ctrl.php?logout=1">SAIR</a>
+    <a href="../controller/loginController.php?logout=1">SAIR</a>
     <hr>
     <?php foreach($lista as $item): ?>
         <div class="card">
@@ -29,7 +29,7 @@ $lista = $reviewModel->listar();
             <img src="<?php echo $img; ?>">
             <h3><?php echo $item['titulo']; ?> (Nota: <?php echo $item['nota']; ?>)</h3>
             <p><?php echo $item['analise']; ?></p>
-            <form action="../controlador/review.ctrl.php" method="POST">
+            <form action="../controller/review.ctrl.php" method="POST">
                 <input type="hidden" name="acao" value="excluir">
                 <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
                 <button type="submit">Excluir (X)</button>
