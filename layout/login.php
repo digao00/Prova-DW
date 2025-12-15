@@ -6,7 +6,6 @@
     <form action="../controller/loginController.php" method="POST">
         Usuário: <input type="text" name="usuario" required><br><br>
         Senha: <input type="password" name="senha" required><br><br>
-        <input type="checkbox" name="manter_conectado" value="1"> Manter logado<br><br>
         <button type="submit">Entrar</button>
     </form>
 </body>

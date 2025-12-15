@@ -3,6 +3,10 @@ require_once 'conexao.class.php';
 
 class Review {
     private $con;
+    private $titulo;
+    private $analise;
+    private $nota;
+    private $imagemPath;
 
     public function __construct() {
         $this->con = (new Conexao())->getConexao();
@@ -18,10 +22,10 @@ class Review {
     public function inserir($titulo, $analise, $nota, $imagemPath) {
         $sql = "INSERT INTO reviews (titulo, analise, nota, imagem_path) VALUES (:titulo, :analise, :nota, :imagemPath)";
         $stmt = $this->con->prepare($sql);
-        $stmt->bindValue(':titulo', $titulo);
-        $stmt->bindValue(':analise', $analise);
-        $stmt->bindValue(':nota', $nota);
-        $stmt->bindValue(':imagemPath', $imagemPath);
+        $stmt->bindValue(':titulo', $this->$titulo);
+        $stmt->bindValue(':analise', $this->$analise);
+        $stmt->bindValue(':nota', $this->$nota);
+        $stmt->bindValue(':imagemPath', $this->$imagemPath);
         return $stmt->execute();
     }
 
