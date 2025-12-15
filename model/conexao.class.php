@@ -8,15 +8,15 @@ class Conexao {
     public function getConexao() {
         try {
             $this->conexao = new PDO(Conexao::dsn, Conexao::user, Conexao::pass);
-            return $this->conexao;
         }
         catch (Exception $e) {
             die('Erro de Conexão: ' . $e->getMessage());
         }
+        return $this->conexao;
     }
 
     function fecharConexao(){
-        if (isset($this->conexao)) {
+        if (isset( $this->conexao)) {
             $this->conexao = null;
         }
     }
