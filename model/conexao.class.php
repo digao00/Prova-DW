@@ -3,7 +3,7 @@ class Conexao {
     private $conexao;
     private const dsn = "pgsql:dbname=review;host=localhost";
     private const user = "postgres";
-    private const pass = 003512;
+    private const pass = "postgres";
 
     public function getConexao() {
         try {

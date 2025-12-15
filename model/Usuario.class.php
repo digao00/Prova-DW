@@ -3,11 +3,15 @@ require_once 'conexao.class.php';
 
 class Usuario {
     private $con;
-    private $login; 
+    private $login;
     private $senha;
 
-    public function __construct() {
-        $this->con = (new Conexao())->getConexao();
+    public function __get($name){
+        return $this->$name;
+    }
+
+    public function __set($name, $value){
+        $this->$name = $value;
     }
 
     public function verificarLogin() {
