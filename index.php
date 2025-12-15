@@ -1,4 +1,4 @@
 <?php
-header('Location: layout/login.php');
+header('Location: controller/loginController.php');
 exit;
 ?>

@@ -21,6 +21,11 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
     }
 }
 else {
-    header('Location: ../layout/login.php');
+    if(isset( $_SESSION['login'])){
+        header('Location: ../layout/listagem.php');
+    }
+    else {
+        header('Location: ../layout/login.php');
+    }
 }
 ?>
