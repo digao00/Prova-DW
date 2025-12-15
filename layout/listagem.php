@@ -36,7 +36,7 @@ $listaReview = $review->listar();
     <a href="cadastro.php">NOVA REVIEW</a> | 
     <a href="../controller/loginController.php?logout=1">SAIR</a>
     <hr>
-    <?php foreach($listaRewiew as $item): ?>
+    <?php foreach($listaReview as $item): ?>
         <div class="card">
             <?php 
                $img = (!empty($item['imagem_path'])) ? "../img/".$item['imagem_path'] : "https://via.placeholder.com/150";
