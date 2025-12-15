@@ -1,7 +1,7 @@
 <?php
 class Conexao {
     private $con;
-    private const dsn = "pgsql:dbname=rewiew;host=localhost";
+    private const dsn = "pgsql:dbname=review;host=localhost";
     private const user = "postgres";
     private const pass = "poastgres";
 
