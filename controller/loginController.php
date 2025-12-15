@@ -24,7 +24,7 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
     }
 }
 else {
-    if(isset($_SESSION['usuario_id'])){
+    if(isset($_SESSION['usuario_id'])) {
         header('Location: ../layout/listagem.php');
     }
     else {

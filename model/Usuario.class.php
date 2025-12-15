@@ -6,18 +6,18 @@ class Usuario {
     private $login;
     private $senha;
 
-    public function __get($name){
+    public function __get($name) {
         return $this->$name;
     }
 
-    public function __set($name, $value){
+    public function __set($name, $value) {
         $this->$name = $value;
     }
 
     public function __construct() {
         $this->con = (new Conexao())->getConexao();
     }
-    
+
     public function verificarLogin() {
         $senhaHash = md5($this->senha); 
         $sql = "SELECT * FROM usuarios WHERE login = :login AND senha = :senha";

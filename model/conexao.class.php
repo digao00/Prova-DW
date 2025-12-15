@@ -15,8 +15,8 @@ class Conexao {
         return $this->conexao;
     }
 
-    function fecharConexao(){
-        if (isset( $this->conexao)) {
+    function fecharConexao() {
+        if (isset($this->conexao)) {
             $this->conexao = null;
         }
     }
