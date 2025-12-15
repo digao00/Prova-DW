@@ -22,10 +22,10 @@ class Review {
     public function inserir() {
         $sql = "INSERT INTO reviews (titulo, analise, nota, imagem_path) VALUES (:titulo, :analise, :nota, :imagemPath)";
         $stmt = $this->con->prepare($sql);
-        $stmt->bindValue(':titulo', $this->$titulo);
-        $stmt->bindValue(':analise', $this->$analise);
-        $stmt->bindValue(':nota', $this->$nota);
-        $stmt->bindValue(':imagemPath', $this->$imagemPath);
+        $stmt->bindValue(':titulo', $this->titulo);
+        $stmt->bindValue(':analise', $this->analise);
+        $stmt->bindValue(':nota', $this->nota);
+        $stmt->bindValue(':imagemPath', $this->imagemPath);
         return $stmt->execute();
     }
 

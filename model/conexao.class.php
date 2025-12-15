@@ -1,23 +1,25 @@
 <?php
 class Conexao {
     private $con;
-    private $driver = "pgsql";
-    private $host = "localhost";
-    private $dbname = "review"; 
-    private $user = "postgres"; 
-    private $pass = "poastgres";
+    private const dsn = "pgsql:dbname=rewiew;host=localhost";
+    private const user = "postgres";
+    private const pass = "poastgres";
 
     public function getConexao() {
-        if ($this->con == null) {
-            try {
-                $dsn = "$this->driver:host=$this->host;dbname=$this->dbname";
-                $this->con = new PDO($dsn, $this->user, $this->pass);
-                $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                die('Erro de Conexão: ' . $e->getMessage());
-            }
+        try {
+            $this->conexao = new PDO(Conexao::dsn, Conexao::user, Conexao::pass);
+            return $this->conexao;
         }
-        return $this->con;
+        catch (Exception $e) {
+            die('Erro de Conexão: ' . $e->getMessage());
+        }
+    }
+
+    function fecharConexao(){
+        if ( isset( $this->conexao) ){
+            $this->conexao = null;
+        }
     }
 }
+
 ?>

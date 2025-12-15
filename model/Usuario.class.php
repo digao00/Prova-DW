@@ -11,10 +11,10 @@ class Usuario {
     }
 
     public function verificarLogin() {
-        $senhaHash = md5($this->$senha); 
+        $senhaHash = md5($this->senha); 
         $sql = "SELECT * FROM usuarios WHERE login = :login AND senha = :senha";
         $stmt = $this->con->prepare($sql);
-        $stmt->bindValue(':login', $this->$login);
+        $stmt->bindValue(':login', $this->login);
         $stmt->bindValue(':senha', $senhaHash);
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
