@@ -10,7 +10,7 @@ class Usuario {
         $this->con = (new Conexao())->getConexao();
     }
 
-    public function verificarLogin($login, $senha) {
+    public function verificarLogin() {
         $senhaHash = md5($this->$senha); 
         $sql = "SELECT * FROM usuarios WHERE login = :login AND senha = :senha";
         $stmt = $this->con->prepare($sql);

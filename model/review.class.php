@@ -19,7 +19,7 @@ class Review {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function inserir($titulo, $analise, $nota, $imagemPath) {
+    public function inserir() {
         $sql = "INSERT INTO reviews (titulo, analise, nota, imagem_path) VALUES (:titulo, :analise, :nota, :imagemPath)";
         $stmt = $this->con->prepare($sql);
         $stmt->bindValue(':titulo', $this->$titulo);
