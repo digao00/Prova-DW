@@ -10,7 +10,10 @@ if (isset($_GET['logout'])) {
 
 if (isset($_POST['usuario']) && isset($_POST['senha'])) {
     $usuario = new Usuario();
-    $dados = $usuario->verificarLogin($_POST['usuario'], $_POST['senha']);
+    $usuario->login = $_POST['usuario'];
+    $usuario->senha = $_POST['senha'];
+
+    $dados = $usuario->verificarLogin();
 
     if ($dados) {
         $_SESSION['usuario_id'] = $dados['id'];
@@ -21,7 +24,7 @@ if (isset($_POST['usuario']) && isset($_POST['senha'])) {
     }
 }
 else {
-    if(isset( $_SESSION['usuario_id'])){
+    if(isset($_SESSION['usuario_id'])){
         header('Location: ../layout/listagem.php');
     }
     else {

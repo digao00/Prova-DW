@@ -1,9 +1,9 @@
 <?php
 class Conexao {
-    private $con;
+    private $conexao;
     private const dsn = "pgsql:dbname=review;host=localhost";
     private const user = "postgres";
-    private const pass = "poastgres";
+    private const pass = 003512;
 
     public function getConexao() {
         try {
@@ -16,7 +16,7 @@ class Conexao {
     }
 
     function fecharConexao(){
-        if (isset( $this->conexao)) {
+        if (isset($this->conexao)) {
             $this->conexao = null;
         }
     }

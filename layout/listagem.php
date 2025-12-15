@@ -47,7 +47,7 @@ $listaReview = $review->listar();
             <form action="../controller/reviewController.php" method="POST">
                 <input type="hidden" name="acao" value="excluir">
                 <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
-                <button type="submit">Excluir (X)</button>
+                <button type="submit">Excluir</button>
             </form>
         </div>
     <?php endforeach; ?>

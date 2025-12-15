@@ -21,12 +21,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['acao'])) {
                 $imagemNome = $novoNome;
             }
         }
-        $review->inserir($_POST['titulo'], $_POST['analise'], $_POST['nota'], $imagemNome);
+        $review->titulo = $_POST['titulo']; 
+        $review->analise = $_POST['analise']; 
+        $review->nota = $_POST['nota']; 
+        $review->imagemPath = $imagemNome; 
+        $review->inserir();
+        
         header('Location: ../layout/listagem.php');
     }
 
     if ($_POST['acao'] == 'excluir') {
-        $review->excluir($_POST['id']);
+        $review->id = $_POST['id'];
+        $review->excluir();
         header('Location: ../layout/listagem.php');
     }
 }
